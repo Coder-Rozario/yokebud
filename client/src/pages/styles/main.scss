@@ -1,0 +1,96 @@
+/* Global CSS */
+/* Import Montserrat font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  transition: all 100ms;
+  user-select: none;
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
+:root {
+  --Primary_color: #FFA500;
+  --text_color: white;
+  --nav_background: rgba(225, 227, 227, 0.885);
+  --footer_background: rgba(0, 0, 0, 0.8);
+  --background_dark: #000000;
+  --background_light: #1a1a1a;
+  --accent_color: #ff6347;
+  --font-size-base: clamp(0.875rem, 0.9vw, 1rem);
+  --font-size-sm: clamp(0.8rem, 0.8vw, 0.95rem);
+  --font-size-lg: clamp(1rem, 1.2vw, 1.125rem);
+  --heading-1: clamp(1.6rem, 3vw, 2.2rem);
+  --heading-2: clamp(1.4rem, 2.5vw, 2rem);
+  --heading-3: clamp(1.2rem, 2vw, 1.6rem);
+  --section-pad-y: clamp(2rem, 5vw, 4rem);
+  --section-pad-x: clamp(1rem, 4vw, 2rem);
+}
+
+html {
+  font-size: clamp(14px, 0.9vw + 12px, 16px);
+}
+
+body {
+  background-color: black;
+  font-family: 'Montserrat', sans-serif !important; /* Added !important to ensure it overrides any other styles */
+  color: var(--text_color);
+  overflow-x: hidden;
+  position: absolute;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+  background-color: var(--background_dark);
+}
+
+/* Utility classes */
+
+/* Layout styles */
+#container {
+  margin: 0 auto;
+  position: relative;
+  height: fit-content;
+  color: var(--text_color);
+  background-color: rgba(26, 26, 26, 0.95);
+}
+
+@media screen and (max-width: 868px) {
+  #container {
+    width: 100vw;
+    height: fit-content;
+  }
+}
+
+main {
+  height: fit-content;
+  min-height: inherit;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.411);
+  color: var(--text_color);
+}
+
+/* Make sure all text elements use Montserrat */
+h1, h2, h3, h4, h5, h6, p, span, a, li, button, input, textarea, label {
+  font-family: 'Montserrat', sans-serif !important;
+  line-height: 1.4;
+}
+
+h1 { font-size: var(--heading-1); }
+h2 { font-size: var(--heading-2); }
+h3 { font-size: var(--heading-3); }
+p, li, a { font-size: var(--font-size-base); }
+small { font-size: var(--font-size-sm); }
+
+svg {
+  font-size: clamp(0.85rem, 0.8vw, 1.1rem);
+}
+
+/* Component styles (import after base styles) */
+@import './Footer';
+@import './Home';
+@import './About';
